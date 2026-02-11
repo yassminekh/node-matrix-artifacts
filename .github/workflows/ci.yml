@@ -2,19 +2,19 @@ name: Advanced CI
 
 # Quand le workflow se déclenche
 on:
-  workflow_dispatch:        # permet de lancer manuellement
+  workflow_dispatch:          # permet un déclenchement manuel
   push:
     branches: [main, develop]
   pull_request:
     branches: [main, develop]
   schedule:
-    - cron: '0 0 * * 1'  # tous les lundis à minuit
+    - cron: '0 0 * * 1'      # tous les lundis à minuit
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
-      max-parallel: 2  # limite à 2 jobs en simultané
+      max-parallel: 2        # limite à 2 jobs simultanés
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         node: [16, 18, 20]
@@ -30,7 +30,7 @@ jobs:
             node: 22
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -59,4 +59,8 @@ jobs:
       - name: Download artifact (Ubuntu + Node 18)
         uses: actions/download-artifact@v4
         with:
-          name: build-ubuntu-latest-node-
+          name: build-ubuntu-latest-node-18
+
+      - name: Simulate deployment
+        run: |
+          echo "Deploying Ubuntu + Node 18 build..."
