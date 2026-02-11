@@ -1,0 +1,27 @@
+{
+  "name": "matrix-artifacts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && cpy \"src/**/*.js\" dist",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yassminekh/node-matrix-artifacts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yassminekh/node-matrix-artifacts/issues"
+  },
+  "homepage": "https://github.com/yassminekh/node-matrix-artifacts#readme",
+  "devDependencies": {
+    "cpy-cli": "^7.0.0",
+    "rimraf": "^6.1.2"
+  }
+}
