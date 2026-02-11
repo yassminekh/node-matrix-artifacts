@@ -2,6 +2,7 @@ name: Advanced CI
 
 # Quand le workflow se déclenche
 on:
+  workflow_dispatch:        # permet de lancer manuellement
   push:
     branches: [main, develop]
   pull_request:
