@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    
     "clean": "npx rimraf dist",
     "build": "npm run clean && npx cpy src/**/*.js dist",
     "start": "node dist/index.js"
